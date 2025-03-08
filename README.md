@@ -30,3 +30,8 @@ with
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## Plans
+- [ ] change extension to fire at syncshare load itself
+- [ ] add persistent user configuration (time to wait, etc)
+- [ ] add even more features
