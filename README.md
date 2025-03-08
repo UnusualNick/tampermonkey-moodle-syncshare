@@ -22,3 +22,11 @@ with
 4. Save the file
 5. Load the extension in your browser
 6. Done!
+
+## Credits
+- [syncshare](https://syncshare.naloaty.me/) for the original extension
+- [Tampermonkey](https://www.tampermonkey.net/) for the extension
+- [Moodle](https://moodle.org/) for the platform
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
