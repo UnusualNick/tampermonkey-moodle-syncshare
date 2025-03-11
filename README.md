@@ -11,7 +11,7 @@ This is a Tampermonkey script that helps with tests on moodle.
 # How do i make that `syncshare` extension?
 1. Download original extension for your platform from [here](https://syncshare.naloaty.me/)
 2. Extract the extension
-3. Find and replace the following code in `content.js` file
+3. Find and replace the following code in `quizattempt.js` file
 ```javascript
 .attachShadow({mode: "close"})
 ```
