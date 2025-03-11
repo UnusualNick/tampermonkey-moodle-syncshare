@@ -13,7 +13,7 @@ This is a Tampermonkey script that helps with tests on moodle.
 2. Extract the extension
 3. Find and replace the following code in `quizattempt.js` file
 ```javascript
-.attachShadow({mode: "close"})
+.attachShadow({mode: "closed"})
 ```
 with
 ```javascript
