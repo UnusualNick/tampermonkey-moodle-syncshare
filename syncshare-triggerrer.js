@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Syncshare Triggerrer
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  Add a floating button at the top of all pages
+// @version      1.0
+// @description  Add a button which triggers solving exam1
 // @author       Your Name
 // @match        https://exam1.urfu.ru/mod/quiz/attempt*
 // @grant        none
@@ -31,23 +31,23 @@
 
     // Add click event
     button.addEventListener('click', () => {
-        let icons = [...document.querySelectorAll(".subquestion>span"), ...document.querySelectorAll(".control"), ...document.querySelectorAll("fieldset>.answer>div>span")]
-        let store = document.querySelectorAll("body>div")[2].shadowRoot
-        let submenus = store.querySelectorAll(".syncshare-cm")
-        icons.forEach((icon, icon_index) => {
-            icon.click()
-            let answers = submenus[icon_index].children[1].children[3]
-            answers.style.display = "flex"
-            let max_ans_num = 0
-            answers.children.forEach((answer, answer_index) => {
-                let voted = Number(answer.querySelector(".postfix>span").innerText)
-                max_ans_num = Math.max(max_ans_num, voted)
-            })
-            answers.children.forEach((answer, answer_index) => {
-                let voted = Number(answer.querySelector(".postfix>span").innerText)
-                if (max_ans_num == voted) {
-                    answer.click()
-                }
+            let icons = [...document.querySelectorAll("p>.subquestion>span"), ...document.querySelectorAll(".control"), ...document.querySelectorAll("fieldset>.answer>div>span"),...document.querySelectorAll("fieldset>div.answer>span")]
+            let store = document.querySelector("body>#yui3-css-stamp+div").shadowRoot
+            let submenus = store.querySelectorAll(".syncshare-cm")
+            icons.forEach((icon, icon_index) => {
+                icon.click()
+                let answers = submenus[icon_index].children[1].children[3]
+                answers.style.display = "flex"
+                let max_ans_num = 0
+                answers.children.forEach((answer, answer_index) => {
+                    let voted = Number(answer.querySelector(".postfix>span").innerText)
+                    max_ans_num = Math.max(max_ans_num, voted)
+                })
+                answers.children.forEach((answer, answer_index) => {
+                    let voted = Number(answer.querySelector(".postfix>span").innerText)
+                    if (max_ans_num == voted) {
+                        answer.click()
+                    }
 
                 setTimeout(()=>{document.querySelector("#mod_quiz-next-nav").click()}, 1000);
             })})})
