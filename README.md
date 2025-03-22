@@ -32,6 +32,6 @@ with
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## Plans
-- [ ] change extension to fire at syncshare load itself
-- [ ] add persistent user configuration (time to wait, etc)
-- [ ] add even more features
+- [ ] Change extension to fire at syncshare load itself
+- [ ] Add persistent user configuration (time to wait, etc)
+- [ ] Add even more features
